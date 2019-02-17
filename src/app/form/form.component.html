@@ -3,8 +3,22 @@
     <input 
     type="text"
     formControlName="FirstName"
-    placeholder="FirstName"
+    placeholder="FirstName" 
     >
+    <label style="color:orangered"
+    *ngIf =
+    "formGroup.get('FirstName').invalid &&
+    formGroup.get('FirstName').touched &&
+    formGroup.get('FirstName').errors['required']"
+
+    >Required.</label>
+    <label style="color:orangered"
+    *ngIf =
+    "formGroup.get('FirstName').invalid &&
+    formGroup.get('FirstName').touched &&
+    formGroup.get('FirstName').errors['minlength']"
+
+    >min is 3.</label>
   </div><br>
   <div>
       <input 
@@ -12,6 +26,20 @@
       formControlName="LastName"
       placeholder="LastName"
       >
+      <label style="color:orangered"
+    *ngIf =
+    "formGroup.get('LastName').invalid &&
+    formGroup.get('LastName').touched &&
+    formGroup.get('LastName').errors['required']"
+
+    >Required.</label>
+    <label style="color:orangered"
+    *ngIf =
+    "formGroup.get('LastName').invalid &&
+    formGroup.get('LastName').touched &&
+    formGroup.get('LastName').errors['minlength']"
+
+    >min is 3</label>
     </div><br>
 
     <div>
@@ -20,13 +48,36 @@
         formControlName="Email"
         placeholder="Email"
         >
+        <label style="color:orangered"
+    *ngIf =
+    "formGroup.get('Email').invalid &&
+    formGroup.get('Email').touched &&
+    formGroup.get('Email').errors['Email']"
+
+    >Required.</label>
+    <label style="color:orangered"
+    *ngIf =
+    "formGroup.get('Email').invalid &&
+    formGroup.get('Email').touched &&
+    formGroup.get('Email').errors['Email']"
+
+    >is</label>  
       </div><br>
-      <div>
+      <div >
           <input 
-          type="text"
+          type="number"
           formControlName="Age"
           placeholder="Age"
+          min="0"
+          max="99"
           >
+          <label style="color:orangered"
+          *ngIf =
+          "formGroup.get('Age').invalid &&
+          formGroup.get('Age').touched &&
+          formGroup.get('Age').errors['min']"
+      
+          >1-99</label>
         </div><br>
     <div>
       <button>submit</button>

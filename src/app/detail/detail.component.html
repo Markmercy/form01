@@ -1,3 +1,4 @@
-<p>
-  detail works!
-</p>
+<p>FirstName:{{user?.FirstName}}</p>
+<p>LastName:{{user?.LastName}}</p>
+<p>Email:{{user?.Email || '-'}}</p>
+<p>Age:{{user ? user.Age : ''}}</p>
